@@ -17,13 +17,13 @@
       if($inputEmptyMsg){
         $errors['input_empty'] = $inputEmptyMsg;
       }
-      else if(isEmailInvalid($email)){
+      elseif(isEmailInvalid($email)){
         $errors['email_invalid'] = 'your email is invalid.';
       }
-      else if(isUsernameTaken($pdo, $username)){
+      elseif(isUsernameTaken($pdo, $username)){
         $errors['username_taken'] = 'that username is already taken';
       }
-      else if(isEmailRegistered($pdo, $email)){
+      elseif(isEmailRegistered($pdo, $email)){
         $errors['email_used'] = 'email has already been used.';
       }
 
