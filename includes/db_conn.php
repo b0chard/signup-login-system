@@ -1,8 +1,13 @@
 <?php
-  $host = 'localhost';
-  $dbname = 'your_database';
-  $dbusername = 'your_db_username';
-  $dbpassword = 'your_db_password';
+  require_once __DIR__ . '/../vendor/autoloader.php';
+
+  $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+  $dotenv->load();
+
+  $host = $_ENV['DB_HOST'];
+  $dbname = $_ENV['DB_NAME'];
+  $dbusername = $_ENV['DB_USERNAME'];
+  $dbpassword = $_ENV['DB_PASSWORD'];
 
   try{
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $dbusername, $dbpassword);
