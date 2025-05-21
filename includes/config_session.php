@@ -4,8 +4,8 @@
 
   session_set_cookie_params([
     'lifetime' => 1800,
-    'domain' => 'localhost', //change this based on your domain
-    'path' => '/',
+    'domain' => '',
+    'path' => '/projects/signup-login-system',
     'secure' => true,
     'httponly' => true
   ]);
